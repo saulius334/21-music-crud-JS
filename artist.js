@@ -6,7 +6,7 @@ class Artist {
         this.profit = 0;
         this.songlist = []
     }
-    formatCurrency(num) {
+    format(num) {
         return (num / 100).toFixed(2) + this.cur
     }
     intro() {
@@ -19,20 +19,30 @@ class Artist {
         return `${this.name}'s price per song is ${(this.songprice / 100)}`;
     }
 
-    playSong() {
-        this.profit += this.songprice
-    }
-    playlist() {
-        return `${this.name}'s playlist:\n===========\n ${this.songlist.join(` `)}`
-    }
     addSong(song) {
-        this.songlist.push(`${song}\n`)
+        this.songlist.push({
+            id: 1,
+            name: song,
+            count: 0,
+        })
 
         
     }
+    playSong(a) {
+        this.profit += this.songprice
+        let song = this.songlist[a]
+        song.count++
+    }
+    playlist() {
+        let list = 0
+        this.pl = `${this.name}'s playlist:\n==============`
+        for (const song of this.songlist) {
+            return `${this.pl}\n ${++list}. ${song} ${song.count}`
+        }
+    }
 
     fortune() {
-        return `Total lifetime wealth of ${this.name} is ${this.formatCurrency(this.profit)} right now!`;
+        return `Total lifetime wealth of ${this.name} is ${this.format(this.profit)} right now!`;
     }
 }
 
