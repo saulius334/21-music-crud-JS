@@ -44,6 +44,7 @@ class Artist {
     
     playSong(a) {
         this.songlist[a].count++
+        this.profit += this.songprice
         return `Playing song: ${this.songlist[a].title}`
     }
     fortune() {

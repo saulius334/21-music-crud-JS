@@ -52,11 +52,11 @@ console.log(raimonda.fortune());
 console.log(raimonda.songPrice(25));
 // Raimonda's price per song is 0.25 EUR;
 
-raimonda.playSong(2);
+console.log(raimonda.playSong(2));
 // Playing song: Oj lijo lijo.
-raimonda.playSong(0);
+console.log(raimonda.playSong(0));
 // Playing song: Bumciki.
-raimonda.playSong(3);
+console.log(raimonda.playSong(3));
 // Playing song: Kai grazumo.
 
 console.log(raimonda.playlist());
